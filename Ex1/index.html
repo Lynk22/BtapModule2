@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .all-active{
+            width: 100px;
+            text-align: center;
+        }
+        .all-active:hover{
+            cursor: pointer;
+        }
+        .hide-class{
+            display: none;
+        }
+        #delete-button{
+            display: none;
+            justify-content: flex-end;
+        }
+        .delete-one{
+            display: none;
+            border: none;
+            background-color: white;
+            position: absolute;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="position: relative;">
+        <h1 style="text-align: center;">#todo</h1>
+        <div class="mt-5">
+            <ul class="nav nav-underline" style="display: flex; justify-content: space-around; border-bottom: 1px solid rgb(161, 161, 161);">
+                <li class="nav-item all-active">
+                  <a id="all" class="nav-link" aria-current="page" href="#" >All</a>
+                </li>
+                <li id="active" class="nav-item all-active">
+                  <a class="nav-link" href="#">Active</a>
+                </li>
+                <li id="completed" class="nav-item all-active">
+                  <a class="nav-link" href="#">Completed</a>
+                </li>
+              </ul>
+        </div>
+        <div id="search" class="mt-3 d-flex">
+            <input id="details" class="form-control form-control-lg" type="text" placeholder="add details">
+            <button id="addDetails" class="btn btn-primary" type="submit" style="margin-left: 10px; width: 100px;">Add</button>
+        </div>
+        <div id="AllDetails" class="mt-3">
+        </div>
+        <div id="delete-button">
+            <button type="button" class="btn btn-danger">Delete all</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

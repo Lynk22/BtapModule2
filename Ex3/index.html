@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .login-form{
+            border: 2px solid rgb(250, 128, 148);
+            background-color: rgb(255, 239, 241);
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            padding: 50px 30px;
+        }
+        .user-form{
+            display: none;
+            width: 50%;
+            margin: auto;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 login-form">
+        <h1 style="text-align: center;">Sign in</h1>
+        <div id="sign-in-form">
+            <div class="mb-3">
+                <label for="user-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="user-email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="user-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="user-password" placeholder="Password">
+            </div>
+            <button id="sign-in" type="button" class="btn btn-primary mt-3">Đăng nhập</button>
+            <div class="d-flex flex-row-reverse">
+                <button id="make-account" type="button" class="btn btn-link">Bạn chưa có tài khoản?</button>
+            </div>
+        </div>
+        <div id="sign-up-form" style="display: none;">
+            <div class="mb-3">
+                <label for="FirstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="FirstName" placeholder="First name">
+            </div>
+            <div class="mb-3">
+                <label for="LastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="LastName" placeholder="Last name">
+            </div>
+            <div class="mb-3">
+                <label for="MakeEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="MakeEmail" placeholder="name@example.com">
+            </div>
+            <div class="mb-3 ">
+                <label for="MakePassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="MakePassword" placeholder="Password">
+            </div>
+            <button id="sign-up" type="button" class="btn btn-primary mt-3 ">Tạo tài khoản</button>
+            <div class="d-flex flex-row-reverse">
+                <button id="have-account" type="button" class="btn btn-link">Bạn đã có tài khoản?</button>
+            </div>
+        </div>
+    </div>
+    <div class="container user-form" >
+        <div class="d-flex justify-content-between mb-3">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                  <a id="UserList" class="nav-link" aria-current="page" href="#">UserList</a>
+                </li>
+                <li class="nav-item">
+                  <a id="AllPosts" class="nav-link" href="#">AllPosts</a>
+                </li>
+                <li class="nav-item">
+                    <a id="PostDetail" class="nav-link" href="#">PostDetail</a>
+                </li>
+                <li class="nav-item">
+                    <a id="PostByUser" class="nav-link" href="#">PostByUser</a>
+                </li>
+              </ul>
+            <button id="exit" type="button" class="btn btn-outline-secondary">Đăng xuất</button>
+        </div>
+        <div id="user-list">
+            <div class="d-flex">
+                <input type="text" class="form-control" id="for-search" placeholder="User">
+                <button id="searchButton" type="button" class="btn btn-outline-primary" style="margin-left: 10px;">Search</button>
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="all-post" style="display: none;">
+            <div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Tiêu đề</th>
+                        <th scope="col">Ngày tạo</th>
+                        <th scope="col">Người tạo</th>
+                      </tr>
+                    </thead>
+                    <tbody id="pbody">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="post-details" style="display: none;">
+            <div class="d-flex">
+                <input type="number" class="form-control" id="post-search" placeholder="User Id">
+                <button id="searchPost" type="button" class="btn btn-outline-primary" style="margin-left: 10px;">Search</button>
+            </div>
+            <div id="post-detail" class="mt-3">
+                
+            </div>
+        </div>
+        <div id="post-user" style="display: none;">
+            <div class="d-flex mb-3">
+                <input type="email" class="form-control" id="post-by-user" placeholder="User email">
+                <button id="posts-of-user" type="button" class="btn btn-outline-primary" style="margin-left: 10px;">Search</button>
+            </div>
+            <label>Danh sách tiêu đề post:</label>
+            <ul type="1" id="listPost">
+                
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+</html>
